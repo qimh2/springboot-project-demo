@@ -54,7 +54,7 @@ public class OrderService {
      * @param count
      */
     @GlobalTransactional
-    @Transactional(rollbackFor = Exception.class)
+    //@Transactional(rollbackFor = Exception.class)
     public void placeOrder(String userId, String commodityCode, Integer count) {
         BigDecimal orderMoney = new BigDecimal(count).multiply(new BigDecimal(5));
         Order order = new Order().setUserId(userId).setCommodityCode(commodityCode).setCount(count).setMoney(

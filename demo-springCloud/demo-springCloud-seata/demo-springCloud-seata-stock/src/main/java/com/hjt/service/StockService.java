@@ -25,7 +25,7 @@ public class StockService {
      * @param commodityCode
      * @param count
      */
-    @Transactional(rollbackFor = Exception.class)
+    //@Transactional(rollbackFor = Exception.class)
     public void deduct(String commodityCode, int count) {
         if (commodityCode.equals("product-2")) {
             throw new RuntimeException("异常:模拟业务异常:stock branch exception");
@@ -37,5 +37,7 @@ public class StockService {
         stock.setCount(stock.getCount() - count);
 
         stockDAO.updateById(stock);
+
+        int i = 1/0;
     }
 }
