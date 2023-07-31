@@ -52,6 +52,7 @@ public class OrderController {
         orderService.placeOrder("1", "product-1", 1);
         return true;
     }
+
     /**
      * 下单：插入订单表、扣减库存，模拟回滚
      *
